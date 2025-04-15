@@ -1,4 +1,5 @@
 from SubstanceRecognizer import *
+from Substance import *
 import tkinter as tk
 from tkinter import ttk
 
@@ -7,8 +8,8 @@ ttk.Label(root, text='Themed Label').pack()
 root.geometry('300x250')
 root.mainloop()
 
-substances = SubstanceRecognizer("physical_chemical_properties_of_organic_substances.csv").getSubstances()
+systemAI = SubstanceRecognizer("C:\\Users\\200448984\\PycharmProjects\\PythonProject\\physical_chemical_properties_of_organic_substances.csv")
 
-print(substances[0].getValues())
-
-#use this: https://www.pythontutorial.net/tkinter/tkinter-label/
+substance = Substance(["","","70","","","","","","","","",""])
+results = systemAI.findKMostSimilar(substance,10)
+print(results)
