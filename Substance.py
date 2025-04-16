@@ -1,15 +1,18 @@
 class Substance:
     def __init__(self, list):
+        for i in [0,1,5,6,7,8,9,10,11,12,15,16]:
+            if list[i]=="" and i in [5,6,7,8,9,10,11,12]:
+                list[i]=-9999999
         self.name = list[0]
         self.formula = list[1]
-        self.molecular_weight = list[5]
-        self.melting_point = list[6]
-        self.boiling_point = list[7]
-        self.heat_fusion = list[8]
-        self.heat_vaporization = list[9]
-        self.crit_temp = list[10]
-        self.crit_pressure = list[11]
-        self.flash_point = list[12]
+        self.molecular_weight = float(list[5])
+        self.melting_point = float(list[6])
+        self.boiling_point = float(list[7])
+        self.heat_fusion = float(list[8])
+        self.heat_vaporization = float(list[9])
+        self.crit_temp = float(list[10])
+        self.crit_pressure = float(list[11])
+        self.flash_point = float(list[12])
         self.kingdom = list[15]
         self.superclass = list[16]
 

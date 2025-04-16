@@ -13,10 +13,16 @@ class SubstanceRecognizer:
         count = 0
         num = 0
         for i in range(2,len(sub1.getValues())):
-            if (sub1[i]=="" or sub2[i]==""):
-                continue
-            elif (sub1[i]==sub2[i]):
-                count += 1
+            if (type(sub1[i])== str):
+                if (sub1[i]=="" or sub2[i]==""):
+                    continue
+                elif (sub1[i]==sub2[i]):
+                    count += 1
+            elif (type(sub2[i])==float):
+                if (sub2[i]==-9999999):
+                    continue
+                else:
+                    count += abs((sub1[i]-sub2[i])/sub1[i])
 
             num += 1
 
